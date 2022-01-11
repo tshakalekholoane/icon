@@ -87,7 +87,7 @@ EOF
         sips --resampleHeightWidth 256 256 $2 --out $name/icon_128x128@2x.png >/dev/null
         sips --resampleHeightWidth 256 256 $2 --out $name/icon_256x256.png >/dev/null
         sips --resampleHeightWidth 512 512 $2 --out $name/icon_256x256@2x.png >/dev/null
-        sips --resampleHeightWidth 512 512 $2 --out $name/icon_512x512.png >/dev/null
+        # sips --resampleHeightWidth 512 512 $2 --out $name/icon_512x512.png >/dev/null
         cp $2 $name/icon_512x512@2x.png
       else
         if [[ -f $3 ]]; then
@@ -100,14 +100,21 @@ EOF
          name=$3.iconset
         fi
         mkdir $name 2>/dev/null
+        # iOS.
         sips --resampleHeightWidth 40 40 $2 --out $name/icon_20x20@2x.png >/dev/null
         sips --resampleHeightWidth 60 60 $2 --out $name/icon_20x20@3x.png >/dev/null
         sips --resampleHeightWidth 58 58 $2 --out $name/icon_29x29@2x.png >/dev/null
         sips --resampleHeightWidth 87 87 $2 --out $name/icon_29x29@3x.png >/dev/null
         sips --resampleHeightWidth 80 80 $2 --out $name/icon_40x40@2x.png >/dev/null
         sips --resampleHeightWidth 120 120 $2 --out $name/icon_40x40@3x.png >/dev/null
-        sips --resampleHeightWidth 120 120 $2 --out $name/icon_60x60@2x.png >/dev/null
+        # sips --resampleHeightWidth 120 120 $2 --out $name/icon_60x60@2x.png >/dev/null
         sips --resampleHeightWidth 180 180 $2 --out $name/icon_60x60@3x.png >/dev/null
+        # iPadOS.
+        sips --resampleHeightWidth 20 20 $2 --out $name/icon_20x20.png >/dev/null
+        sips --resampleHeightWidth 29 29 $2 --out $name/icon_29x29.png >/dev/null
+        sips --resampleHeightWidth 76 76 $2 --out $name/icon_76x76.png >/dev/null
+        sips --resampleHeightWidth 152 152 $2 --out $name/icon_76x76@2x.png >/dev/null
+        sips --resampleHeightWidth 167 167 $2 --out $name/icon_83.5x83.5@2x.png >/dev/null
         cp $2 $name/icon_1024x1024.png
       fi
     else
